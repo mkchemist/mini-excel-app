@@ -11,7 +11,15 @@
           :key="`sheet_${i}_${sheet}`"
           class="nav-item border rounded"
         >
-          <a href="" class="nav-link text-dark" @click.prevent="selectSheet(sheet)">
+          <a
+            href=""
+            :class="
+              `nav-link ${
+                selectedSheet === sheet ? 'bg-primary text-light' : 'text-dark'
+              }`
+            "
+            @click.prevent="selectSheet(sheet)"
+          >
             <span class="bi-file-spreadsheet-fill"></span>
             <span>{{ sheet }}</span>
           </a>
@@ -26,11 +34,14 @@ export default {
   computed: {
     sheets() {
       return this.$store.getters.sheets;
+    },
+    selectedSheet() {
+      return this.$store.getters.selectedSheet;
     }
   },
   methods: {
     selectSheet(sheet) {
-      this.$store.commit("selectSheet", sheet)
+      this.$store.commit("selectSheet", sheet);
     }
   }
 };

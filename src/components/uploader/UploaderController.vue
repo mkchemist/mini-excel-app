@@ -24,6 +24,18 @@
             <span>start</span>
           </button>
         </li>
+        <li class="nav-item mx-1">
+          <button class="btn btn-sm btn-secondary" @click="closeFile" :disabled="!file">
+            <span class="mx-1 bi-x"></span>
+            <span>Close</span>
+          </button>
+        </li>
+        <li class="nav-item mx-1">
+          <router-link to="join" class="btn btn-sm btn-secondary">
+            <span class="bi-arrow-left-right me-1"></span>
+            <span>Join Sheets</span>
+          </router-link>
+        </li>
       </ul>
     </div>
   </div>
@@ -53,6 +65,10 @@ export default {
             file: this.file
         })
     },
+    closeFile() {
+      this.$refs.upload_input.value = null;
+      this.$store.commit("closeFile");
+    }
   },
 };
 </script>

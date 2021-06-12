@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from "../views/Home.vue"
 import Uploader from "../views/Uploader.vue"
+import JoinSheets from "../views/JoinSheets.vue";
 
 Vue.use(VueRouter)
 
@@ -13,6 +14,10 @@ const routes = [
   {
     path: '/upload',
     component: Uploader
+  },
+  {
+    path: "/join",
+    component: JoinSheets
   }
 ]
 

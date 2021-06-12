@@ -29,3 +29,12 @@ td,tr,th {
   border:none;
   outline-color: lightblue;
 }
+
+
+.no-outline {
+  outline-width: 0;
+}
+
+.pointer{ 
+  cursor: pointer;
+}
